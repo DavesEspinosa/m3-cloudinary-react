@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 //import axios from "axios";
 import { Link } from "react-router-dom";
-import EditProject from './../components/EditProject'
-import AddTask from './../components/AddTask'
-import service from "./../API/service";
+import EditProject from "./../components/EditProject";
+import AddTask from "./../components/AddTask";
+import service from "./../lib/service";
 
 class ProjectDetails extends Component {
   state = {
@@ -11,18 +11,11 @@ class ProjectDetails extends Component {
     description: " ",
     image: "",
     tasks: [],
-    expanded: false,
   };
 
   componentDidMount() {
     this.getSingleProject();
   }
-
-  handleExpandClick = () => {
-    this.setState({
-      expanded: !this.state.expanded,
-    });
-  };
 
   getSingleProject = () => {
     const { id } = this.props.match.params;
@@ -52,7 +45,7 @@ class ProjectDetails extends Component {
     return (
       <div>
         <h1>Project Details</h1>
-        <img alt='' src={this.state.image} style={{ width: "100px" }}></img>
+        <img alt="" src={this.state.image} style={{ width: "100px" }}></img>
         <h2>{this.state.title}</h2>
         <h4>{this.state.description}</h4>
 
