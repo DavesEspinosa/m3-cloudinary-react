@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
-import NavigationIcon from "@material-ui/icons/Navigation";
-import Button from "@material-ui/core/Button";
-import SaveIcon from "@material-ui/icons/Save";
+
 
 class AddTask extends Component {
   state = {
@@ -43,71 +39,47 @@ class AddTask extends Component {
     this.setState({ [name]: value });
   };
 
+   
   displayForm = () => {
-    return (
+    return(
       <div>
         <form>
-          <input
-            type="text"
-            placeholder="Title"
-            name="title"
+          <input 
+            type="text" 
+            placeholder='Title'
+            name="title" 
             value={this.state.title}
             onChange={this.handleChange}
           />
 
-          <input
-            name="description"
-            placeholder="Description"
+          <input 
+            name="description" 
+            placeholder='Description'
             value={this.state.description}
             onChange={this.handleChange}
           />
-          <div>
-            <Button
-              style={{ marginTop: "1em", backgroundColor:'green' }}
-              type="submit"
-              variant="contained"
-              color="primary"
-              size="small"
-              startIcon={<SaveIcon />}
-              onClick={this.handleFormSubmit}
-            >
-              Save
-            </Button>
-          </div>
+
+          <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>
-    );
-  };
+    )
+  }
+  
 
-  render() {
-    return (
+  render(){
+    return(
       <div>
-        {this.state.isShowing ? (
-          <Fab
-            style={{ marginTop: "2em", marginBottom: "1em", }}
-            onClick={this.toggleForm}
-            variant="extended"
-            size="small"
-            color="primary"
-            aria-label="add"
-          >
-            <NavigationIcon />
-            Collapse
-          </Fab>
-        ) : (
-          <Fab
-            style={{ marginTop: "2em", marginBottom: "1em" }}
-            onClick={this.toggleForm}
-            color="primary"
-            aria-label="add"
-          >
-            <AddIcon />
-          </Fab>
-        )}
+        <button onClick={this.toggleForm}> 
+          {this.state.isShowing ? 'Close' : 'Add task'}
+        </button>
 
-        {!this.state.isShowing ? null : this.displayForm()}
+        {
+          !this.state.isShowing 
+            ? null
+            : this.displayForm()
+        }
       </div>
-    );
+    )
   }
 }
 

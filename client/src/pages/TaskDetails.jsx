@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import EditTask from "../components/EditTask";
-import DeleteIcon from "@material-ui/icons/Delete";
-import Button from "@material-ui/core/Button";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-
 
 class TaskDetails extends Component {
   state = {};
@@ -43,28 +39,11 @@ class TaskDetails extends Component {
         <h2>{this.state.title}</h2>
         <p>{this.state.description}</p>
         <EditTask getTheTask={this.getTheTask}></EditTask>
-        <div style={{marginTop:'1em'}}>
-        <Button
-          onClick={this.deleteTask}
-          variant="contained"
-          color="secondary"
-          startIcon={<DeleteIcon />}
-        >
-          {" "}
-          Delete
-        </Button>
+
+        <button onClick={this.deleteTask}>Delete Task</button>
 
         {/* To go back we use react-router-dom method `history.goBack()` available on `props` object */}
-        <Button
-        style={{marginLeft:'2em'}} 
-            variant="contained"
-            color="default"
-            startIcon={<ArrowBackIosIcon />}
-            onClick={this.props.history.goBack}
-          >
-            Go Back
-          </Button>
-          </div>
+        <button onClick={this.props.history.goBack}>Go Back</button>
       </div>
     );
   }

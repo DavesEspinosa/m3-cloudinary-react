@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
-import Button from "@material-ui/core/Button";
-import SaveIcon from "@material-ui/icons/Save";
-
 
 class EditProject extends Component {
   state = {
@@ -52,18 +49,7 @@ class EditProject extends Component {
             onChange={this.handleChange}
           />
 
-          <div>
-            <Button
-              style={{ marginTop: "1em", backgroundColor:'green' }}
-              type="submit"
-              variant="contained"
-              color="primary"
-              size="small"
-              startIcon={<SaveIcon />}
-            >
-              Save
-            </Button>
-          </div>
+          <input type="submit" value="Submit" />
         </form>
       </div>
     );
