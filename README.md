@@ -36,8 +36,8 @@ You will find the example of the variable names you should create in the `.env.s
 
 ```
 CLOUD_NAME=paste-your-cloudinary-cloud-name-here
-API_KEY=paste-your-cloudinary-api-key-here
-API_SECRET=paste-your-cloudinary-api-secret-here
+CLOUD_API_KEY=paste-your-cloudinary-api-key-here
+CLOUD_API_SECRET=paste-your-cloudinary-api-secret-here
 ```
 
 
