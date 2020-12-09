@@ -35,9 +35,9 @@ Add the following fields to your `.env` and update the variable values.
 You will find the example of the variable names you should create in the `.env.sample` file.
 
 ```
-CLOUDINARY_CLOUD_NAME=paste-your-cloudinary-cloud-name-here
-CLOUDINARY_API_KEY=paste-your-cloudinary-api-key-here
-CLOUDINARY_API_SECRET=paste-your-cloudinary-api-secret-here
+CLOUD_NAME=paste-your-cloudinary-cloud-name-here
+API_KEY=paste-your-cloudinary-api-key-here
+API_SECRET=paste-your-cloudinary-api-secret-here
 ```
 
 
@@ -189,23 +189,6 @@ module.exports = router;
 
 
 ### 1. Install packages
-
-Install the following  packages in your client folder to get access to Material-UI framework:
-
-- [Material-UI](https://material-ui.com/getting-started/installation/)
-
-In your terminal, to install the core of the framework.
-
-```
-npm install @material-ui/core
-```
-
-In your terminal, In order to use prebuilt SVG Material icons.
-
-```
-npm install @material-ui/icons
-```
-
 
 
 ### 2. Update the `AddProject` view 
