@@ -190,23 +190,6 @@ module.exports = router;
 
 ### 1. Install packages
 
-Install the following  packages in your client folder to get access to Material-UI framework:
-
-- [Material-UI](https://material-ui.com/getting-started/installation/)
-
-In your terminal, to install the core of the framework.
-
-```
-npm install @material-ui/core
-```
-
-In your terminal, In order to use prebuilt SVG Material icons.
-
-```
-npm install @material-ui/icons
-```
-
-
 
 ### 2. Update the `AddProject` view 
 
