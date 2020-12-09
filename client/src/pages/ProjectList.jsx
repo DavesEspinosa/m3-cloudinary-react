@@ -34,11 +34,6 @@ class ProjectList extends Component {
           {listOfProjects.map((project) => (
             <div key={project._id} className="project">
               <Link to={`/projects/${project._id}`}>
-                <img
-                  style={{ width: "150px", height: "100px" }}
-                  src={project.image}
-                  alt=""
-                />
                 <h3>{project.title}</h3>
                 <p>{project.description} </p>
               </Link>

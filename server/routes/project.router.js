@@ -4,31 +4,17 @@ const mongoose = require("mongoose");
 const router = express.Router();
 
 
-const uploader = require("./../configs/cloudinary-setup");
 
 const Project = require("./../models/project.model");
 //const Task = require('./../models/task.model');
 
-// include CLOUDINARY:
-// ADD an horitzontal middleware
-router.post("/upload", uploader.single("image"), (req, res, next) => {
-  console.log("file is: ", req.file);
-
-  if (!req.file) {
-    next(new Error("No file uploaded!"));
-    return;
-  }
-  // get secure_url from the file object and save it in the
-  // variable 'secure_url', but this can be any name, just make sure you remember to use the same in frontend
-  res.json({ secure_url: req.file.secure_url });
-});
 
 
 // POST '/api/projects'
 router.post("/projects", (req, res, next) => {
-  const { title, description, image } = req.body;
+  const { title, description } = req.body;
 
-  Project.create({ title, description, image, tasks: [] })
+  Project.create({ title, description, tasks: [] })
     .then((createdProject) => {
       res.status(201).json(createdProject);
     })
